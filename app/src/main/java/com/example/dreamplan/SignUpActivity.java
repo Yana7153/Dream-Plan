@@ -36,9 +36,7 @@ public class SignUpActivity extends AppCompatActivity {
                 } else if (!password.equals(confirmPassword)) {
                     Toast.makeText(SignUpActivity.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
                 } else {
-                    // Proceed with sign-up logic (e.g., save to database)
                     Toast.makeText(SignUpActivity.this, "Sign Up Successful", Toast.LENGTH_SHORT).show();
-                    // Navigate to another activity if needed
                 }
             }
         });

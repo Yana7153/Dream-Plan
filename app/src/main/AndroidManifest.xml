@@ -28,6 +28,7 @@
         <activity
             android:name=".SignUpActivity"
             android:exported="true" />
+
     </application>
 
 </manifest>
