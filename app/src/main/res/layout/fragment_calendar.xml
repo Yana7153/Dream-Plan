@@ -1,15 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- Motivational Text -->
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/txtMotivation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calendar"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:text="Stay consistent, your future self will thank you!"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="12dp"/>
+
+    <!-- Task Schedule Title -->
+    <TextView
+        android:id="@+id/txtTaskSchedule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Task Schedule"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"/>
+
+    <!-- Horizontal Scrollable Calendar -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCalendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:paddingBottom="12dp"/>
+
+    <!-- Task Popup Box (Initially Hidden) -->
+    <FrameLayout
+        android:id="@+id/taskPopup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:elevation="8dp"
+        android:visibility="gone"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/txtPopupTasks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tasks for Selected Day"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+    </FrameLayout>
 
 </LinearLayout>

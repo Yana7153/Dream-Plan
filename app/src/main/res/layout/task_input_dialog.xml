@@ -1,0 +1,125 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#80CBC4">
+
+    <!-- ScrollView with content description for accessibility -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:fillViewport="true"
+        android:importantForAccessibility="yes"
+        android:contentDescription="Scrollable form for adding task section">
+
+        <!-- Section Layout with width as a percentage of the screen width -->
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Section Name -->
+            <EditText
+                android:id="@+id/et_section_name"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Section Name"
+                android:textColor="#000000"
+                android:inputType="text"
+                android:contentDescription="Enter section name" />
+
+            <!-- Calendar Box (Collapsible) -->
+            <LinearLayout
+                android:id="@+id/llCalendarBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:layout_marginTop="16dp">
+
+                <!-- Calendar Title -->
+                <TextView
+                    android:id="@+id/tv_calendar_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="Select Due Date"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:paddingBottom="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingTop="8dp"
+                    android:contentDescription="Select due date for section" />
+
+                <!-- Calendar Details (Initially Hidden) -->
+                <LinearLayout
+                    android:id="@+id/ll_calendar_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <!-- Date Picker -->
+                    <DatePicker
+                        android:id="@+id/date_picker"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:importantForAccessibility="yes"
+                        android:contentDescription="Select due date using the date picker" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Priority Dropdown -->
+            <Spinner
+                android:id="@+id/spinner_priority"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:importantForAccessibility="yes"
+                android:contentDescription="Select task priority" />
+
+            <!-- Task Limit -->
+            <EditText
+                android:id="@+id/et_task_limit"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Task Limit"
+                android:textColor="#000000"
+                android:inputType="number"
+                android:contentDescription="Enter task limit for section" />
+
+            <!-- Reminders Toggle -->
+            <CheckBox
+                android:id="@+id/cb_reminders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Set Reminders"
+                android:textColor="#000000"
+                android:contentDescription="Toggle reminders for section" />
+
+            <!-- Notes Section -->
+            <EditText
+                android:id="@+id/et_notes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Notes"
+                android:textColor="#000000"
+                android:inputType="textMultiLine"
+                android:lines="3"
+                android:contentDescription="Enter any notes for the section" />
+
+            <!-- Save Button -->
+            <Button
+                android:id="@+id/btn_save_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save Section"
+                android:contentDescription="Save the task section" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
